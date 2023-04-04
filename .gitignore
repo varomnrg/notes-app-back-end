@@ -9,6 +9,7 @@ logs/
 
 # Ignore environment file
 .env
+.prod.env
 
 # Ignore configuration files
 config/*.json
