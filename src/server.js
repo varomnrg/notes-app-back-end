@@ -50,13 +50,12 @@ const init = async () => {
             maxAgeSec: process.env.ACCESS_TOKEN_AGE,
         },
         validate: (artifacts) => ({
-            isValid: true,  
+            isValid: true,
             credentials: {
                 id: artifacts.decoded.payload.id,
             },
         }),
     });
-
     await server.register([
         {
             plugin: notes,
