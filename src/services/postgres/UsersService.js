@@ -81,15 +81,25 @@ class UsersService {
             throw new AuthenticationError("Kredensial yang Anda berikan salah");
         }
 
-        const { id, password: hashedPassword } = result.rows[0]
+        const { id, password: hashedPassword } = result.rows[0];
 
         const match = await bcrypt.compare(password, hashedPassword);
 
-        if (!match){
-            throw new AuthenticationError('Kredensial yang Anda berikan salah')
+        if (!match) {
+            throw new AuthenticationError("Kredensial yang Anda berikan salah");
         }
 
         return id;
+    }
+
+    async getUsersByUsername(username) {
+        const query = {
+            text: "SELECT id, username, fullname FROM users WHERE username LIKE $1",
+            values: [`%${username}%`],
+        };
+
+        const result = await this._pool.query(query);
+        return result.rows;
     }
 }
 
