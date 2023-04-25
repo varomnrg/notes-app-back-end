@@ -27,3 +27,5 @@ yarn-error.log*
 
 # Ignore Windows Thumbs.db files
 Thumbs.db
+
+src/api/uploads/file
