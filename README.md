@@ -4,7 +4,7 @@ NotesApp Backend is the backend API for a notes applications. this project is a 
 
 ## Tech Stack
 
-**Server:**  Node.js, Express, MongoDB, Redis, Jest, GitHub Actions, Nginx
+**Server:**  Node.js, Express, MongoDB, Redis, RabbitMQ
 
 ## Authors
 
